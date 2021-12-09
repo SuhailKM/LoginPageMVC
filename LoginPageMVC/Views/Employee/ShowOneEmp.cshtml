@@ -1,0 +1,48 @@
+﻿@model LoginPageMVC.Models.employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowOneEmp</title>
+</head>
+<body>
+    @using (Html.BeginForm("ShowAllEmp", "Employee", FormMethod.Post))
+    {
+        <table width="100%">
+            <tr>
+                <td>Sno</td>
+                <td>@Html.TextBoxFor(a => a.Sno)</td>
+            </tr>
+            <tr>
+                <td>Employee Number</td>
+                <td>@Html.TextBoxFor(a => a.EmpNumber)</td>
+            </tr>
+            <tr>
+                <td>Employee Name</td>
+                <td>@Html.TextBoxFor(a => a.EmpName)</td>
+            </tr>
+            <tr>
+                <td>Job</td>
+                <td>@Html.TextBoxFor(a => a.EmpJob)</td>
+            </tr>
+            <tr>
+                <td>Salary</td>
+                <td>@Html.TextBoxFor(a => a.EmpSal)</td>
+            </tr>
+            <tr>
+                <td>Employee Email</td>
+                <td>@Html.TextBoxFor(a => a.EmpEmail)</td>
+            </tr>
+            <tr>
+                @ViewBag.empinfo();
+            </tr>
+        </table>
+    }
+    </body>
+</html>

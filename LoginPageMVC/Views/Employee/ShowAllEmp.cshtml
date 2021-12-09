@@ -1,0 +1,48 @@
+﻿@model  IEnumerable<LoginPageMVC.Models.employee>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowAllEmp</title>
+</head>
+<body>
+@using (Html.BeginForm("ShowAllEmp", "Employee", FormMethod.Post))
+{
+    <table width="100%">
+        <tr>
+            <th>Employee Number</th>
+            <th>Employee Name</th>
+            <th>Employee Job</th>
+            <th>Employee Salary</th>
+            <th>Employee Email</th>
+        </tr>
+        @foreach (var em in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(emp => em.EmpNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(emp => em.EmpName)
+                </td>
+                <td>
+                    @Html.DisplayFor(emp => em.EmpJob)
+                </td>
+                <td>
+                    @Html.DisplayFor(emp => em.EmpSal)
+                </td>
+                <td>
+                    @Html.DisplayFor(emp => em.EmpEmail)
+                </td>
+            </tr>
+        }
+    </table>
+}
+</body>
+</html>

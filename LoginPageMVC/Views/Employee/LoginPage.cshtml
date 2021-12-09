@@ -1,0 +1,35 @@
+﻿@model LoginPageMVC.Models.Login
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LoginPage</title>
+</head>
+<body>
+@using(Html.BeginForm("LoginPage","Employee",FormMethod.Post))
+            {
+    <table width="100%">
+        <tr>
+            <td>Username</td>
+            <td>@Html.TextBoxFor(s => s.username)</td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>@Html.PasswordFor(s => s.password)</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="submit" value="Login here" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">@ViewBag.loginfo</td>
+        </tr>
+    </table>
+            }
+</body>
+</html>
